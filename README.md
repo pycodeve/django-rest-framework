@@ -71,7 +71,7 @@ INSTALLED_APPS = [
 ```
 ### Starting the Project
 ```bash
-> python manage.py runserver
+python manage.py runserver
 ```
 ## Contributing
 
