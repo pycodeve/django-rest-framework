@@ -1,44 +1,66 @@
-# Pasos previos
-> mkdir store_app
-> cd store_app
-> python -m venv vienv or virtualenv vienv
+# Django Rest Framework (Base)
 
-## In cmd.exe (Windows)
-> vienv\Scripts\activate.bat
+The purpose of this repository is to have a base project using Django Rest Framework, where you can quickly consult the different functions, classes, and ways to create a Rest API.
 
-## In PowerShell (Windows)
-> vienv\Scripts\Activate.ps1
+## Prerequisite Steps
+```bash
+mkdir store_app
+cd store_app
+```
 
-## Linux
-> source ./vienv/Scripts/activate
+## Creating the Virtual Environment
+```bash
+python -m venv vienv # or virtualenv vienv
+```
 
-# Creando un proyecto
+## Activating the Environment
+### In cmd.exe (Windows)
+```bash
+vienv\Scripts\activate.bat
+```
+### In PowerShell (Windows)
+```bash
+vienv\Scripts\Activate.ps1
+```
+### In Linux
+```bash
+source ./vienv/Scripts/activate
+```
 
-## Instalando primeras dependencias
-> pip install django
-> pip install djangorestframework
+## Creating and Configuring the Project
+### Installing Dependencies
+```bash
+pip install django
+pip install djangorestframework
+```
 
-## Creando el archivo requirements.txt
-> pip freeze > requirements.txt
+### Creating the requirements.txt File
+```bash
+pip freeze > requirements.txt
+```
 
-## Creando un proyecto
-> django-admin startproject store .
+### Creating the Project
+```bash
+django-admin startproject store .
+```
 
-## Agregar rest_framework al archivo settings
-
+### Adding rest_framework to settings.py
+```python
 INSTALLED_APPS = [
     ...
     'rest_framework',
 ]
+```
 
-## Creando las apps
+### Creating the Apps
+```bash
+python manage.py startapp products
+python manage.py startapp suppliers
+python manage.py startapp coupons
+```
 
-> python manage.py startapp products
-> python manage.py startapp suppliers
-> python manage.py startapp coupons
-
-## Agregar las apps al archivo settings
-
+### Adding the Apps to settings.py
+```bash
 INSTALLED_APPS = [
     ...
     'rest_framework',
@@ -46,6 +68,18 @@ INSTALLED_APPS = [
     'suppliers',
     'coupons',
 ]
-
-# Arrancar proyecto
+```
+### Starting the Project
+```bash
 > python manage.py runserver
+```
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
