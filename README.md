@@ -85,6 +85,11 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
+### Crear user admin
+```bash
+python manage.py createsuperuser
+```
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
