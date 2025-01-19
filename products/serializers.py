@@ -10,7 +10,13 @@ class ProductSerializer(serializers.ModelSerializer):
         if value < 0:
             raise serializers.ValidationError("Price can't be negative")
         return value
+    
+    def validate(self, attrs):
+        if len(attrs["title"]) < 5 or len(attrs["description"]) < 5:
+            raise serializers.ValidationError("Title and descriptions must be at least 5 characters long")
 
+        return super().validate(attrs)
+    
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
