@@ -16,5 +16,4 @@ class Product(models.Model):
         related_name="categories", 
         on_delete=models.CASCADE,
         default=None
-
     )

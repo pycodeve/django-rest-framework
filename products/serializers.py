@@ -2,6 +2,9 @@ from rest_framework import serializers
 from .models import Product, Category
 
 class ProductSerializer(serializers.ModelSerializer):
+
+    high_end = serializers.SerializerMethodField()
+
     class Meta:
         model = Product
         fields = '__all__'
@@ -17,7 +20,13 @@ class ProductSerializer(serializers.ModelSerializer):
 
         return super().validate(attrs)
     
+    def get_high_end(self, obj):
+        return obj.price > 100 if "yes" else "no"
+
 class CategorySerializer(serializers.ModelSerializer):
+
+    products = ProductSerializer(many=True, read_only=True)
+
     class Meta:
         model = Category
-        fields = '__all__'
+        fields = ["id", "title", "is_active", "products"]
