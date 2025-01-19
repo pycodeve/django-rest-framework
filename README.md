@@ -73,6 +73,18 @@ INSTALLED_APPS = [
 ```bash
 python manage.py runserver
 ```
+
+## Additional commands
+### Create migrations
+```bash
+python manage.py makemigrations
+```
+
+### Run the migrations
+```bash
+python manage.py migrate
+```
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
